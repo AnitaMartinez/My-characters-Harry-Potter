@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import iconDead from '../images/dead.png'
 
 
 const Character = ({name, image, altImage, house, condition, coreWand}) => {
   return (
-    <li>
-      <h4> {name} </h4>
-      <div className="container-image">
-        <img src={image} alt={altImage} className="imageCharacter"/>
+    <li className="container-character">
+      <div className="container-image center">
+          <img src={image} alt={altImage} className="imageCharacter"/>
       </div>
-      <div className={house}></div>
-      <img src={iconDead} alt="Icon death" className={`${condition} icon-death`}/>
-      <p>{name}''s magic wand contains: {coreWand}.</p>
+      <div className="text-center">
+        <h4 className="tittle-character"> {name} </h4>
+        <div className={`${house} center`} ></div>
+        <img src={iconDead} alt="Icon death" className={`${condition} icon-death`}/>
+        <p>{name}''s magic wand contains: {coreWand}.</p>
+      </div>
     </li>
   )
 }
-
 
 Character.propTypes = {
   name: PropTypes.string,

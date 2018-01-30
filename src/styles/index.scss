@@ -2,8 +2,9 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1;
+  font-weight: 300;
 }
 
 ul {
@@ -12,6 +13,15 @@ ul {
 
 .hidden {
   display: none;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
 }
 
 
@@ -32,29 +42,44 @@ ul {
 .tittle-lg {
   margin-top: 0;
   color: #210f05;
-  font-size: 36px;
+  font-size: 28px;
+  @media (min-width: 418px) {
+    font-size: 36px;
+  }
 }
 
 /* Input */
 
 .inputName {
-  margin-right:auto;
-  margin-left: auto;
   display: block;
-  width: 400px;
-  height: 25px;
+  height: 30px;
   border: solid 1px #E8CA65;
   border-radius: 5px;
   margin-top: 20px;
+  font-size: 14px;
+  width: 80%;
 }
 
 /* Item */
+
+.container-character {
+  width: 80%; /* Provisional */
+  background-color: #ece0b6;
+  padding: 24px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
 
 .container-image {
   width: 150px;
   height: 150px;
   overflow: hidden;
   border-radius: 50%;
+}
+
+.tittle-character {
+  font-family: 'Montez', cursive;
+  font-size: 20px;
 }
 
 .imageCharacter {

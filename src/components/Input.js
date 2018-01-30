@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Input = (props) => {
   return (
-    <input onChange={props.actionToPerfom} type="text" className="inputName" value={props.value} placeholder="Insert a name"/>
+    <input onChange={props.actionToPerfom} type="text" className="inputName center" value={props.value} placeholder=" Insert a name"/>
   )
 }
 
