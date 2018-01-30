@@ -10,10 +10,8 @@ class App extends Component {
 
     this.state = {
       infoCharacters: [],
-      activeSearch: false,
       valueInput: ""
     }
-
   }
 
   fetchInfoCharacters() {
@@ -33,7 +31,7 @@ class App extends Component {
 
   paintListCharacters() {  //Quizás esto podría estar en el willmount
     const filterByInputValue = this.state.infoCharacters.filter((object) => {
-        return object.name.includes(this.state.valueInput)
+        return object.name.toLowerCase().includes(this.state.valueInput.toLowerCase())
       });
 
     return filterByInputValue.map((object, index) => {
