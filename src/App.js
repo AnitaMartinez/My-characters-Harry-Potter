@@ -10,7 +10,8 @@ class App extends Component {
 
     this.state = {
       infoCharacters: [],
-      activeSearch: false
+      activeSearch: false,
+      valueInput: ""
     }
 
   }
@@ -26,36 +27,37 @@ class App extends Component {
     });
   }
 
-  handleKeyPress() {  //Aquí tengo que poner el if
-    this.setState({activeSearch: !this.state.activeSearch})
+  handleKeyPress(event) {
+    this.setState({valueInput: event.target.value});
   }
 
-  paintListCharacters() {   //Quizás esto podría estar en el willmount
-    const classNameLi = this.state.activeSearch ? "hidden" : "";  //Aquí le digo que me añada o no la clase hidden
+  paintListCharacters() {  //Quizás esto podría estar en el willmount
+    const filterByInputValue = this.state.infoCharacters.filter((object) => {
+        return object.name.includes(this.state.valueInput)
+      });
 
-    return this.state.infoCharacters.map((object, index) => {
+    return filterByInputValue.map((object, index) => {
       let listOfCharacters =
       <Character
-      key = {index}
-      className = {classNameLi}
-      name = {object.name}
-      image = {object.image}
-      altImage = {object.actor}
-      house = {object.house}
-      condition = {object.alive ? "alive" :  "dead" }
+        key = {index}
+        name = {object.name}
+        image = {object.image}
+        altImage = {object.actor}
+        house = {object.house}
+        condition = {object.alive ? "alive" :  "dead" }
       />
       return listOfCharacters
     });
   };
 
   render() {
-    return (
+      return (
       <div>
         <header>
           <h1>My Harry Potter Characteres</h1>
         </header>
         <main>
-          <Input actionToPerfom={this.handleKeyPress} />
+          <Input actionToPerfom={this.handleKeyPress} value={this.state.valueInput}/>
           <ul>
             {this.paintListCharacters()}
           </ul>
