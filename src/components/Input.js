@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class Input extends Component {
-  render() {
-    return (
-        <input onChange={this.props.actionToPerfom} type="text" className="inputName" value={this.props.value} placeholder="Insert a name"/>
-    );
-  }
+const Input = (props) => {
+  return (
+    <input onChange={props.actionToPerfom} type="text" className="inputName" value={props.value} placeholder="Insert a name"/>
+  )
 }
 
-Input.propTypes = {  //condition
+Input.propTypes = {
   actionToPerfom: PropTypes.func.isRequired,
   value: PropTypes.string
 
