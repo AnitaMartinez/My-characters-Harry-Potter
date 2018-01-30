@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Input extends Component {
   render() {
@@ -7,5 +8,11 @@ class Input extends Component {
     );
   }
 }
+
+Input.propTypes = {  //condition
+  actionToPerfom: PropTypes.func.isRequired,
+  value: PropTypes.string
+
+};
 
 export default Input;

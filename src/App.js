@@ -6,13 +6,15 @@ import Input from "./components/Input.js"
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.handleOnChange = this.handleOnChange.bind(this);
-
     this.state = {
       infoCharacters: [],
       valueInput: ""
     }
+  }
+
+  handleOnChange(event) {
+    this.setState({valueInput: event.target.value});
   }
 
   fetchInfoCharacters() {
@@ -26,26 +28,27 @@ class App extends Component {
     });
   }
 
-  handleOnChange(event) {
-    this.setState({valueInput: event.target.value});
+  componentDidMount() {
+    this.fetchInfoCharacters();
   }
 
-  paintListCharacters() {  //Quizás esto podría estar en el willmount
-    const filterByInputValue = this.state.infoCharacters.filter((object) => {
-        return object.name.toLowerCase().includes(this.state.valueInput.toLowerCase())
+  paintListCharacters() {
+    const filterByInputValue = this.state.infoCharacters.filter((itemCharacter) => {
+        return itemCharacter.name.toLowerCase().includes(this.state.valueInput.toLowerCase())
       });
 
-    return filterByInputValue.map((object, index) => {
-      let listOfCharacters =
+    return filterByInputValue.map((itemCharacter, index) => {
+      const listOfCharacters = (
       <Character
         key = {index}
-        name = {object.name}
-        image = {object.image}
-        altImage = {object.actor}
-        house = {object.house}
-        condition = {object.alive ? "alive" :  "dead" }
-        coreWand = {object.wand.core === "" ? "We do not know, sorry" : object.wand.core}
+        name = {itemCharacter.name}
+        image = {itemCharacter.image}
+        altImage = {itemCharacter.actor}
+        house = {itemCharacter.house}
+        condition = {itemCharacter.alive ? "alive" :  "" }
+        coreWand = {itemCharacter.wand.core === "" ? "We do not know, sorry" : itemCharacter.wand.core}
       />
+      )
       return listOfCharacters
     });
   };
@@ -62,10 +65,6 @@ class App extends Component {
         </main>
       </div>
     );
-  }
-
-  componentDidMount() {
-    this.fetchInfoCharacters();
   }
 
 }
