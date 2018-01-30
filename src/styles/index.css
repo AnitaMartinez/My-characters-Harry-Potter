@@ -1,7 +1,36 @@
 body {
   margin: 0;
-  font-family: sans-serif;
-  box-sizing: border-box; }
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 1; }
 
 .hidden {
   display: none; }
+
+/* Header */
+.header {
+  height: 100px;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.tittle-lg {
+  margin-top: 0;
+  color: #210f05;
+  font-size: 36px; }
+
+/* Input */
+.inputName {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  width: 400px;
+  height: 25px;
+  border: solid 1px #E8CA65;
+  border-radius: 5px;
+  margin-top: 20px; }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from "./components/Header.js"
 import Character from "./components/Character.js"
 import Input from "./components/Input.js"
 
@@ -6,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
 
     this.state = {
       infoCharacters: [],
@@ -25,7 +26,7 @@ class App extends Component {
     });
   }
 
-  handleKeyPress(event) {
+  handleOnChange(event) {
     this.setState({valueInput: event.target.value});
   }
 
@@ -43,6 +44,7 @@ class App extends Component {
         altImage = {object.actor}
         house = {object.house}
         condition = {object.alive ? "alive" :  "dead" }
+        coreWand = {object.wand.core === "" ? "We do not know, sorry" : object.wand.core}
       />
       return listOfCharacters
     });
@@ -51,11 +53,9 @@ class App extends Component {
   render() {
       return (
       <div>
-        <header>
-          <h1>My Harry Potter Characteres</h1>
-        </header>
+        <Header/>
         <main>
-          <Input actionToPerfom={this.handleKeyPress} value={this.state.valueInput}/>
+          <Input actionToPerfom={this.handleOnChange} value={this.state.valueInput}/>
           <ul>
             {this.paintListCharacters()}
           </ul>
