@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import Character from "./components/Character.js"
+import Input from "./components/Input.js"
 
 class App extends Component {
   constructor(props) {
     super(props);
 
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+
     this.state = {
-      infoCharacters: []
+      infoCharacters: [],
+      activeSearch: false
     }
 
-    this.fetchInfoCharacters = this.fetchInfoCharacters.bind(this);
   }
 
   fetchInfoCharacters() {
@@ -23,11 +26,18 @@ class App extends Component {
     });
   }
 
-  paintListCharacters() {
+  handleKeyPress() {  //Aquí tengo que poner el if
+    this.setState({activeSearch: !this.state.activeSearch})
+  }
+
+  paintListCharacters() {   //Quizás esto podría estar en el willmount
+    const classNameLi = this.state.activeSearch ? "hidden" : "";  //Aquí le digo que me añada o no la clase hidden
+
     return this.state.infoCharacters.map((object, index) => {
       let listOfCharacters =
       <Character
       key = {index}
+      className = {classNameLi}
       name = {object.name}
       image = {object.image}
       altImage = {object.actor}
@@ -45,6 +55,7 @@ class App extends Component {
           <h1>My Harry Potter Characteres</h1>
         </header>
         <main>
+          <Input actionToPerfom={this.handleKeyPress} />
           <ul>
             {this.paintListCharacters()}
           </ul>
