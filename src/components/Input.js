@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = (props) => {
+const Input = ({actionToPerfom, value}) => {
   return (
-    <input onChange={props.actionToPerfom} type="text" className="inputName center" value={props.value} placeholder=" Insert a name"/>
+    <div className="container-search">
+      <input onChange={actionToPerfom} type="text" className="inputName" value={value} placeholder=" Insert a name"/>
+      <img src="images/search.png" alt="Logo de buscador" className="icon-search"/>
+    </div>
   )
 }
 

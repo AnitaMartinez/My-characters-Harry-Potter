@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1;
   font-weight: 300; }
 
@@ -32,7 +32,7 @@ ul {
 
 .tittle-lg {
   margin: 0;
-  color: #210f05;
+  color: #1b0a00;
   font-size: 28px; }
   @media (min-width: 418px) {
     .tittle-lg {
@@ -45,14 +45,17 @@ ul {
   border-radius: 50%; }
 
 .tittle-character {
-  font-family: 'Montez', cursive;
+  font-family: "Montez", cursive;
   font-size: 20px; }
 
 .imageCharacter {
   width: 100%; }
 
 .icon-death {
-  width: 40px; }
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px; }
 
 .icon-house {
   background-size: cover;
@@ -73,15 +76,19 @@ ul {
   background-image: url("/images/ravenclaw.png"); }
 
 .container-character {
+  position: relative;
   background-color: #ece0b6;
-  padding: 18px 15px 5px 15px;
+  padding: 18px 25px 5px 25px;
   border-radius: 10px;
-  height: 360px;
+  height: 345px;
   margin-top: 30px;
   max-width: 400px; }
   @media (min-width: 768px) {
     .container-character {
       margin-top: 50px; } }
+
+.line-height-lg {
+  line-height: 1.5; }
 
 .wrapper-grid {
   display: grid;
@@ -89,7 +96,7 @@ ul {
   justify-content: center;
   justify-items: center;
   grid-template-rows: auto;
-  grid-template-columns: 78%; }
+  grid-template-columns: 76%; }
   @media (min-width: 768px) {
     .wrapper-grid {
       grid-column-gap: 40px;
@@ -98,11 +105,32 @@ ul {
     .wrapper-grid {
       grid-template-columns: 25% 25% 25%; } }
 
+.container-search {
+  display: flex;
+  justify-content: center;
+  margin: 40px 40px 0 40px; }
+
 .inputName {
-  display: block;
   height: 30px;
   border: solid 1px #E8CA65;
   border-radius: 5px;
-  margin-top: 20px;
   font-size: 14px;
-  width: 80%; }
+  width: 80%;
+  margin-right: 15px;
+  max-width: 300px; }
+
+.icon-search {
+  width: auto;
+  height: 30px;
+  animation-duration: 2s;
+  animation-name: beat;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-in-out; }
+
+@keyframes beat {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }

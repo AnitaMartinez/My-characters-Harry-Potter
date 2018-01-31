@@ -6,7 +6,7 @@
 }
 
 .tittle-character {
-  font-family: 'Montez', cursive;
+  font-family: $typo-secondary;
   font-size: 20px;
 }
 
@@ -16,6 +16,9 @@
 
 .icon-death {
   width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .icon-house {
@@ -42,13 +45,18 @@
 }
 
 .container-character {
-  background-color: #ece0b6;
-  padding: 18px 15px 5px 15px;
+  position: relative;
+  background-color: $color-primary;
+  padding: 18px 25px 5px 25px;
   border-radius: 10px;
-  height: 360px;
+  height: 345px;
   margin-top: 30px;
   max-width: 400px;
   @media (min-width: 768px) {
     margin-top: 50px;
   }
+}
+
+.line-height-lg {
+  line-height: 1.5;
 }

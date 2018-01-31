@@ -5,12 +5,12 @@
   justify-content: center;
   justify-items: center;
   grid-template-rows: auto;
-  grid-template-columns: 78%;
-  @media (min-width: 768px) {
+  grid-template-columns: 76%;
+  @media (min-width: $breakpoint-tablet) {
     grid-column-gap: 40px;
     grid-template-columns: 40% 40%;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: $breakpoint-desktop) {
     grid-template-columns: 25% 25% 25%;
   }
 }
