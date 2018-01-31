@@ -32,7 +32,7 @@ class App extends Component {
     this.fetchInfoCharacters();
   }
 
-  paintListCharacters() {
+  paintAndFilterCharacters() {
     const filterByInputValue = this.state.infoCharacters.filter((itemCharacter) => {
         return itemCharacter.name.toLowerCase().includes(this.state.valueInput.toLowerCase())
       });
@@ -41,12 +41,12 @@ class App extends Component {
       const listOfCharacters = (
       <Character
         key = {index}
-        name = {itemCharacter.name}
-        image = {itemCharacter.image}
-        altImage = {itemCharacter.actor}
-        house = {itemCharacter.house}
-        condition = {itemCharacter.alive ? "alive" :  "" }
-        coreWand = {itemCharacter.wand.core === "" ? "We do not know, sorry" : itemCharacter.wand.core}
+        name = { itemCharacter.name }
+        image = { itemCharacter.image }
+        altImage = { itemCharacter.actor }
+        house = { itemCharacter.house }
+        condition = { itemCharacter.alive ? "alive" :  "" }
+        coreWand = { itemCharacter.wand.core === "" ? "We do not know, sorry" : itemCharacter.wand.core}
       />
       )
       return listOfCharacters
@@ -58,9 +58,9 @@ class App extends Component {
       <div>
         <Header/>
         <main>
-          <Input actionToPerfom={this.handleOnChange} value={this.state.valueInput}/>
-          <ul>
-            {this.paintListCharacters()}
+          <Input actionToPerfom={ this.handleOnChange } value={ this.state.valueInput }/>
+          <ul className="wrapper-grid">
+            { this.paintAndFilterCharacters() }
           </ul>
         </main>
       </div>

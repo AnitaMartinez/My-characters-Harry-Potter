@@ -9,6 +9,7 @@ body {
 
 ul {
   list-style-type: none;
+  padding-left: 0;
 }
 
 .hidden {
@@ -61,14 +62,6 @@ ul {
 }
 
 /* Item */
-
-.container-character {
-  width: 80%; /* Provisional */
-  background-color: #ece0b6;
-  padding: 24px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-}
 
 .container-image {
   width: 150px;
@@ -124,4 +117,34 @@ ul {
   background-position: center;
   width: 40px;
   height: 50px;
+}
+
+.container-character {
+  background-color: #ece0b6;
+  padding: 18px 15px 5px 15px;
+  border-radius: 10px;
+  height: 360px;
+  margin-top: 30px;
+  max-width: 400px;
+  @media (min-width: 768px) {
+    margin-top: 50px;
+  }
+}
+
+/* Grid */
+
+.wrapper-grid {
+  display: grid;
+  grid-row-gap: 40px;
+  justify-content: center;
+  justify-items: center;
+  grid-template-rows: auto;
+  grid-template-columns: 78%;
+  @media (min-width: 768px) {
+    grid-column-gap: 40px;
+    grid-template-columns: 40% 40%;
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: 25% 25% 25%;
+  }
 }
