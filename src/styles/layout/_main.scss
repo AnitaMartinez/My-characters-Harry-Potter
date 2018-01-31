@@ -1,0 +1,54 @@
+.container-image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.tittle-character {
+  font-family: 'Montez', cursive;
+  font-size: 20px;
+}
+
+.imageCharacter {
+  width: 100%;
+}
+
+.icon-death {
+  width: 40px;
+}
+
+.icon-house {
+  background-size: cover;
+  background-position: center;
+  width: 40px;
+  height: 50px;
+}
+
+.Gryffindor {
+  background-image: url("/images/gryffindor.png");
+}
+
+.Slytherin {
+  background-image: url("/images/slytherin.png");
+}
+
+.Hufflepuff {
+  background-image: url("/images/hufflepuf.png");
+}
+
+.Ravenclaw {
+  background-image: url("/images/ravenclaw.png");
+}
+
+.container-character {
+  background-color: #ece0b6;
+  padding: 18px 15px 5px 15px;
+  border-radius: 10px;
+  height: 360px;
+  margin-top: 30px;
+  max-width: 400px;
+  @media (min-width: 768px) {
+    margin-top: 50px;
+  }
+}

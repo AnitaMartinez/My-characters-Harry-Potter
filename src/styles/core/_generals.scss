@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}

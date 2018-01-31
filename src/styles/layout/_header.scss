@@ -1,0 +1,19 @@
+.header {
+  height: 100px;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tittle-lg {
+  margin: 0;
+  color: #210f05;
+  font-size: 28px;
+  @media (min-width: 418px) {
+    font-size: 36px;
+  }
+}
