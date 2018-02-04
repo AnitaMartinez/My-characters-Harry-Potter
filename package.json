@@ -2,9 +2,9 @@
   "name": "ejercicio-potter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://AnitaMartinez.github.io/clarke-s4-eval-trd-AnitaMartinez",
   "dependencies": {
     "gh-pages": "^1.1.0",
-    "homepage": "https://anitamartinez.github.io/clarke-s4-eval-trd-AnitaMartinez/",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.0",
