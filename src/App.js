@@ -8,9 +8,11 @@ class App extends Component {
     super(props);
     this.state = {
       infoCharacters: [],
-      valueInput: ""
+      valueInput: "",
+      showOnlyStudents: false
     }
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
   }
 
   fetchInfoCharacters() {
@@ -32,13 +34,21 @@ class App extends Component {
     this.setState({valueInput: event.target.value});
   }
 
+  handleCheck() {
+    this.setState((prevState) => {
+      return {
+        showOnlyStudents: !prevState.showOnlyStudents
+      }
+    })
+  }
+
   render() {
       return (
       <div>
         <Header/>
         <main>
-          <Input actionToPerfom={ this.handleOnChange } value={ this.state.valueInput }/>
-          <ListCharacters infoCharacters={ this.state.infoCharacters } valueInput= { this.state.valueInput }/>
+          <Input actionToPerfom={ this.handleOnChange } value={ this.state.valueInput } showOnlyStudents = {this.state.showOnlyStudents} actionToCheck={this.handleCheck}/>
+          <ListCharacters infoCharacters={ this.state.infoCharacters } valueInput= { this.state.valueInput } showOnlyStudents={this.state.showOnlyStudents}/>
         </main>
       </div>
     );

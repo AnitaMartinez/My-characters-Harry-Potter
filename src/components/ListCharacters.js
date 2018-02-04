@@ -7,7 +7,16 @@ class ListCharacters extends Component {
     const { infoCharacters } = this.props
     const { valueInput } = this.props
     const filterByInputValue = infoCharacters.filter((itemCharacter) => {
-      return itemCharacter.name.toLowerCase().includes(valueInput.toLowerCase())
+      const nameContainsFilter = itemCharacter.name.toLowerCase().includes(valueInput.toLowerCase());
+      const isStudent = itemCharacter.hogwartsStudent
+
+      if (this.props.showOnlyStudents) {
+        return nameContainsFilter && isStudent
+      } else {
+        return nameContainsFilter
+      }
+
+
     });
 
     return (
