@@ -1,3 +1,59 @@
+//Inputs
+
+.container-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 40px 0 40px;
+}
+
+.inputName {
+  height: 30px;
+  border: solid 1px $color-terciary;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 80%;
+  margin-right: 15px;
+  max-width: 300px;
+}
+
+.icon-search {
+  width: auto;
+  height: 30px;
+  animation-duration: 2s;
+  animation-name: beat;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.container-checkbox {
+  margin-top: 20px;
+}
+
+.container-checkbox label {
+  margin-right: 10px;
+  margin-left: 5px;
+  border-bottom: 1px solid $color-terciary;
+  color: $color-secondary;
+}
+
+
+
+//Cards
+
 .container-image {
   width: 150px;
   height: 150px;

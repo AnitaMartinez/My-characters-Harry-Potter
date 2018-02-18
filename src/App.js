@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./components/Header.js";
 import ListCharacters from "./components/ListCharacters.js";
-import Input from "./components/Input.js";
+import Inputs from "./components/Inputs.js";
 
 
 class App extends Component {
@@ -48,7 +48,7 @@ class App extends Component {
       <div>
         <Header/>
         <main>
-          <Input actionToPerfom={ this.handleOnChange } value={ this.state.valueInput } showOnlyStudents = {this.state.showOnlyStudents} actionToCheck={this.handleCheck}/>
+          <Inputs actionToPerfom={ this.handleOnChange } value={ this.state.valueInput } showOnlyStudents = {this.state.showOnlyStudents} actionToCheck={this.handleCheck}/>
           <ListCharacters infoCharacters={ this.state.infoCharacters } valueInput= { this.state.valueInput } showOnlyStudents={this.state.showOnlyStudents}/>
         </main>
       </div>
